@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Depo Bilgileri - Stok Takip Sistemi</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Genel CSS -->
+  <link rel="stylesheet" href="css/stok/styles.css">
+  
+  <!-- Depo Bilgileri Özel CSS -->
+  <link rel="stylesheet" href="css/stok/depoBilgileri.css">
+  
+  <!-- JavaScript Dosyaları -->
+  <script src="js/stok/scripts.js" defer></script>
+  <script src="js/stok/depoBilgileri.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Stok Takip Sistemi</h1>
+    <!-- Kullanıcı bilgileri, Profil resmi vb. -->
+    <div class="user-info">
+      <img src="images/logop.png" width="32px" height="32px" alt="Profil Resmi"/>
+      <span>Merhaba, Admin</span>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul>
+      <li><a href="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="urunEkle"><i class="fas fa-box-open"></i> Ürünler</a></li>
+      <li><a href="depoBilgileri" class="active"><i class="fas fa-warehouse"></i> Depo Bilgileri</a></li>
+      <li><a href="adminRaporlar"><i class="fas fa-chart-line"></i> Raporlar</a></li>
+      <li><a href="ayarlar"><i class="fas fa-cogs"></i> Ayarlar</a></li>
+      <li><a href="anasayfa"><i class="fas fa-sign-out-alt"></i> Çıkış</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Sayfa Başlığı ve Ekleme Butonu -->
+    <div class="page-header">
+      <h2><i class="fas fa-warehouse"></i> Depo Bilgileri</h2>
+      <button class="add-button" id="addWarehouseBtn"><i class="fas fa-plus"></i> Depo Ekle</button>
+    </div>
+
+    <!-- Depo Listesi -->
+    <section class="warehouse-list">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Depo Adı</th>
+            <th>Lokasyon</th>
+            <th>Stok Kapasitesi</th>
+            <th>Mevcut Stok</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Örnek Depo Satırları -->
+          <tr>
+            <td>1</td>
+            <td>Merkez Depo</td>
+            <td>İstanbul</td>
+            <td>10,000</td>
+            <td>7,500</td>
+            <td><span class="status in-stock">İyi</span></td>
+            <td>
+              <button class="edit-btn"><i class="fas fa-edit"></i> Düzenle</button>
+              <button class="delete-btn"><i class="fas fa-trash-alt"></i> Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Doğu Depo</td>
+            <td>Ankara</td>
+            <td>8,000</td>
+            <td>3,200</td>
+            <td><span class="status low-stock">Düşük</span></td>
+            <td>
+              <button class="edit-btn"><i class="fas fa-edit"></i> Düzenle</button>
+              <button class="delete-btn"><i class="fas fa-trash-alt"></i> Sil</button>
+            </td>
+          </tr>
+          <!-- Daha Fazla Depo Satırı Ekleyebilirsiniz -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Depo Ekleme/Düzenleme Modalı -->
+    <div class="modal" id="warehouseModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="warehouseModalTitle">Depo Ekle</h2>
+        <form id="warehouseForm">
+          <label for="warehouseName">Depo Adı:</label>
+          <input type="text" id="warehouseName" name="warehouseName" required>
+
+          <label for="warehouseLocation">Lokasyon:</label>
+          <input type="text" id="warehouseLocation" name="warehouseLocation" required>
+
+          <label for="warehouseCapacity">Stok Kapasitesi:</label>
+          <input type="number" id="warehouseCapacity" name="warehouseCapacity" min="0" required>
+
+          <label for="warehouseStock">Mevcut Stok:</label>
+          <input type="number" id="warehouseStock" name="warehouseStock" min="0" required>
+
+          <label for="warehouseStatus">Durum:</label>
+          <select id="warehouseStatus" name="warehouseStatus" required>
+            <option value="">Seçiniz</option>
+            <option value="İyi">İyi</option>
+            <option value="Düşük">Düşük</option>
+            <option value="Tamamlandı">Tamamlandı</option>
+          </select>
+
+          <button type="submit" class="submit-btn">Kaydet</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Butonu -->
+  <button id="scrollToTopBtn" title="Üste Çık"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>

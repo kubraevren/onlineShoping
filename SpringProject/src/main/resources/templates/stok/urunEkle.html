@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Ekleme</title>
+    <!-- CSS ve diğer linkler burada -->
+</head>
+<link rel="stylesheet" href="css/stok/stoknavbar.css">
+<script src="js/stok/script.js" defer></script>
+<link rel="stylesheet" href="/css/stok/admin.css">
+<link rel="stylesheet" href="css/stok/adminRaporlar.css">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1> </h1>
+        <!-- Kullanıcı bilgileri, Profil resmi vb. -->
+        <div class="user-info">
+            <img src="images/logop.png" width="25px" />
+            <span>Merhaba, Admin</span>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="dashboard" >Dashboard</a></li>
+            <li><a href="urunEkle"class="active">Ürünler</a></li>
+            <li><a href="depoBilgileri">Depo Bilgileri</a></li>
+            <li><a href="adminRaporlar">Raporlar</a></li>
+            <li><a href="ayarlar">Ayarlar</a></li>
+            <li><a href="anasayfa">Çıkış</a></li>
+        </ul>
+    </div>
+
+
+    <h1>Ürün Yönetimi</h1>
+    <!-- enctype="multipart/form-data" ifadesi dosya yüklemesini etkinleştirir -->
+    <form th:action="@{/urunEkle}" th:object="${urunBilgisi}" method="post" enctype="multipart/form-data">
+        <div>
+            <label>Ürün Adı:</label>
+            <input type="text" name="urunAdi" required>
+        </div>
+        <div>
+            <label>Açıklama:</label>
+            <textarea name="aciklama"></textarea>
+        </div>
+        <div>
+            <label>Fiyat:</label>
+            <input type="number" step="0.01" name="fiyat" required>
+        </div>
+        <div>
+            <label>Stok Miktarı:</label>
+            <input type="number" name="stokMiktari" required>
+        </div>
+        <div>
+            <label>Kategori:</label>
+            <input type="text" name="kategori">
+        </div>
+        <div>
+            <label>Marka:</label>
+            <input type="text" name="marka">
+        </div>
+        <div>
+            <label>Birim:</label>
+            <input type="text" name="birim">
+        </div>
+        <div>
+            <label>İndirim Oranı:</label>
+            <input type="number" step="0.01" name="indirimOrani">
+        </div>
+        <div>
+            <label>Min Stok Uyarı:</label>
+            <input type="text" name="minStokUyari">
+        </div>
+        <div class="mb-3">
+            <label>Resim Seçin:</label>
+            <input class="form-control" type="file" id="image" name="image" accept="image/*" required>
+        </div>
+        <button type="submit">Kaydet</button>
+    </form>
+</body>
+
+</html>

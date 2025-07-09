@@ -1,0 +1,69 @@
+/* Genel Ayarlar */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.form {
+  background-color: #ffffff;
+  border-radius: 10px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.form .inputForm {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #ecedec;
+  border-radius: 10px;
+  padding: 10px;
+  transition: border 0.2s ease-in-out;
+}
+
+.form .inputForm i {
+  color: #2d79f3;
+  margin-right: 10px;
+}
+
+.form .input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.form .input:focus {
+  outline: none;
+}
+
+.form .inputForm:focus-within {
+  border: 1.5px solid #2d79f3;
+}
+
+.btn-primary {
+  background-color: #2d79f3;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1c5bb8;
+}
+
+.p a {
+  text-decoration: none;
+}
+
+.p a:hover {
+  text-decoration: underline;
+}
+
+.btn-light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-light i {
+  font-size: 1.2em;
+}

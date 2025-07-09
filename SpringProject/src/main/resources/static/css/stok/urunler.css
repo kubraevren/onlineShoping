@@ -1,0 +1,47 @@
+/* depoBilgileri.css */
+
+/* Navbar ve Sidebar Renkleri */
+.navbar {
+  background-color: #4b3cb1;
+}
+
+.sidebar {
+  background-color: #6a5acd;
+}
+
+/* Buton Özelleştirmeleri */
+.submit-btn {
+  background-color: #4b3cb1;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #383298;
+}
+
+/* Alert Özelleştirmeleri */
+.alert {
+  margin-bottom: 20px;
+}
+
+/* Form Container */
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+  }
+  .main-content {
+      margin-left: 0;
+  }
+}

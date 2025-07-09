@@ -1,0 +1,11 @@
+{
+    "java.errors.incompleteClasspath.severity": "ignore",   // Eksik classpath hatalarını yoksayar
+    "java.showBuildActions": "never",                        // Build işlemiyle ilgili aksiyonları göstermez
+    "java.compile.nullAnalysis.mode": "off",                  // Null analiz uyarılarını kapatır
+    "java.configuration.updateBuildConfiguration": "manual", // Proje yapılandırmalarını manuel olarak günceller
+    "java.format.settings.enabled": false,                    // Otomatik formatlama uyarılarını kapatır
+    "java.format.onType": false,                              // Tip bazında formatlama uyarılarını kapatır
+    "java.saveActions.organizeImports": false,                // Import düzenleme uyarılarını kapatır
+    "java.suggest.imports": false,                            // Otomatik import önerilerini kapatır
+    "java.suggest.enabled": false                             // Kod öneri uyarılarını kapatır
+}

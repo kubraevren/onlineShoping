@@ -1,0 +1,260 @@
+/* dashboard.css */
+
+/* Özet Kartlar */
+.summary-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.summary-cards .card {
+  flex: 1 1 calc(25% - 20px); /* 4 kart yanyana */
+  min-width: 200px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.summary-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.summary-cards .card-icon {
+  font-size: 2.5rem;
+  color: #4b3cb1;
+}
+
+.summary-cards .card-info h2 {
+  font-size: 1rem;
+  color: #666;
+}
+
+.summary-cards .card-info p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* İşlem Paneli */
+.action-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.action-panel .action-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 calc(25% - 20px);
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-panel .action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.action-panel .action-card h3 {
+  font-size: 1.2rem;
+  color: #4b3cb1;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-panel .action-card .action-btn {
+  background-color: #4b3cb1;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.action-panel .action-card .action-btn:hover {
+  background-color: #3f2f9d;
+}
+
+/* Grafikler */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.chart-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.chart-box h2 {
+  font-size: 1.2rem;
+  color: #4b3cb1;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chart-box h2 i {
+  font-size: 1.2rem;
+  color: #ff5200;
+}
+
+.chart-box canvas {
+  max-width: 100%;
+  height: 300px;
+}
+
+/* Son İşlemler */
+.recent-activities {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.recent-activities h2 {
+  font-size: 1.3rem;
+  color: #4b3cb1;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.recent-activities table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-activities th, .recent-activities td {
+  border-bottom: 1px solid #eee;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.recent-activities th {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.recent-activities tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Harita */
+.map-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.map-section h2 {
+  font-size: 1.2rem;
+  color: #4b3cb1;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#warehouseMap {
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Tasarım */
+@media screen and (max-width: 1200px) {
+  .charts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .charts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .sidebar {
+    top: 60px;
+    height: auto;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding-top: 10px;
+  }
+  
+  .sidebar ul {
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  
+  .summary-cards .card,
+  .action-panel .action-card,
+  .charts-grid .chart-box,
+  .recent-activities,
+  .map-section {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+ 
+}

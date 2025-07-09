@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Stok Takip Sistemi</title>
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Genel CSS -->
+  <link rel="stylesheet" href="css/stok/styles.css">
+  
+  <!-- Dashboard Özel CSS -->
+  <link rel="stylesheet" href="css/stok/dashboard.css">
+  
+  <!-- JavaScript Dosyaları -->
+  <script src="js/scripts.js" defer></script>
+  <script src="js/stok/dashboard.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Stok Takip Sistemi</h1>
+    <!-- Kullanıcı bilgileri, Profil resmi vb. -->
+    <div class="user-info">
+      <img src="images/logop.png" width="32px" height="32px" alt="Profil Resmi"/>
+      <span>Merhaba, Admin</span>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul>
+      <li><a href="dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="urunEkle"><i class="fas fa-box-open"></i> Ürünler</a></li>
+      <li><a href="depoBilgileri"><i class="fas fa-warehouse"></i> Depo Bilgileri</a></li>
+      <li><a href="adminRaporlar"><i class="fas fa-chart-line"></i> Raporlar</a></li>
+      <li><a href="ayarlar"><i class="fas fa-cogs"></i> Ayarlar</a></li>
+      <li><a href="anasayfa"><i class="fas fa-sign-out-alt"></i> Çıkış</a></li>
+    </ul>
+  </div>
+
+
+<script>fetch('/tumSiparisler')
+  .then(response => response.json())
+  .then(data => {
+      const tbody = document.querySelector('#recentActivitiesBody');
+      tbody.innerHTML = '';
+
+      data.forEach((siparis, index) => {
+          const urunIsimleri = siparis.urunler.map(u => u.urunAdi).join(', ');
+          const musteriAdi = siparis.musteri ? siparis.musteri.kullaniciAdi : 'Anonim';
+          const tarih = new Date(siparis.siparisTarihi).toLocaleString();
+
+          const row = `
+              <tr>
+                  <td>${index + 1}</td>
+                  <td>Sipariş</td>
+                  <td>${urunIsimleri}</td>
+                  <td>${musteriAdi}</td>
+                  <td>${tarih}</td>
+              </tr>
+          `;
+          tbody.innerHTML += row;
+      });
+  })
+  .catch(error => console.error('Siparişler yüklenirken hata:', error));
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+<script>
+  var socket = new SockJS('/websocket-endpoint');
+  var stompClient = Stomp.over(socket);
+
+  stompClient.connect({}, function(frame) {
+    console.log('Connected: ' + frame);
+    stompClient.subscribe('/topic/orders', function(message) {
+      var newOrder = JSON.parse(message.body);
+      console.log("Yeni sipariş alındı:", newOrder);
+      // Burada yeni sipariş bilgisini admin paneline ekleyin.
+      // Örneğin, bir tabloyu veya listeyi güncelleyin.
+    });
+  });
+</script>
+
+
+
+
+
+
+  
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Özet Kartlar (KPI) -->
+    <section class="summary-cards">
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-boxes"></i>
+        </div>
+        <div class="card-info">
+          <h2>Toplam Ürün</h2>
+          <p id="totalProducts">1,200</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <div class="card-info">
+          <h2>Toplam Depo</h2>
+          <p id="totalWarehouses">5</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="card-info">
+          <h2>Günlük Satış</h2>
+          <p id="dailySales">₺25,000</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="card-info">
+          <h2>Yeni Müşteri</h2>
+          <p id="newCustomers">120</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- İşlem Paneli -->
+    <section class="action-panel">
+      <div class="action-card">
+        <h3><i class="fas fa-plus-circle"></i> Yeni Ürün Ekle</h3>
+        <button class="action-btn" id="addProductBtn"><i class="fas fa-plus"></i> Ürün Ekle</button>
+      </div>
+      <div class="action-card">
+        <h3><i class="fas fa-warehouse"></i> Yeni Depo Ekle</h3>
+        <button class="action-btn" id="addWarehouseBtn"><i class="fas fa-plus"></i> Depo Ekle</button>
+      </div>
+      <div class="action-card">
+        <h3><i class="fas fa-chart-line"></i> Rapor Oluştur</h3>
+        <button class="action-btn" id="generateReportBtn"><i class="fas fa-chart-pie"></i> Rapor Oluştur</button>
+      </div>
+      <div class="action-card">
+        <h3><i class="fas fa-cogs"></i> Ayarlar</h3>
+        <button class="action-btn" id="settingsBtn"><i class="fas fa-cogs"></i> Ayarlar</button>
+      </div>
+    </section>
+
+    <!-- Grafikler Bölümü -->
+    <section class="charts-grid">
+      <!-- Aylık Satış Grafiği -->
+      <div class="chart-box">
+        <h2><i class="fas fa-chart-line"></i> Aylık Satış Grafiği</h2>
+        <canvas id="monthlySalesChart"></canvas>
+      </div>
+
+      <!-- Ürün Stok Durumu -->
+      <div class="chart-box">
+        <h2><i class="fas fa-boxes"></i> Ürün Stok Durumu</h2>
+        <canvas id="productStockChart"></canvas>
+      </div>
+
+      <!-- Depo Bazlı Stok Dağılımı -->
+      <div class="chart-box">
+        <h2><i class="fas fa-warehouse"></i> Depo Bazlı Stok Dağılımı</h2>
+        <canvas id="warehouseStockChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Son İşlemler -->
+    <section class="recent-activities">
+      <h2><i class="fas fa-history"></i> Son İşlemler</h2>
+      <table>
+        <thead>
+          <tr>
+              <th>#</th>
+              <th>İşlem Türü</th>
+              <th>Ürün Adı</th>
+              <th>Ürün Sayısı</th>
+              <th>Müşteri</th>
+              <th>Tarih</th>
+          </tr>
+        </thead>
+        <tbody id="recentActivitiesBody">
+          <!-- Örnek İşlem Satırları -->
+          <tr>
+            <td>1</td>
+            <td>Ürün Ekleme</td>
+            <td>Akıllı Telefon</td>
+            <td>50</td>
+            <td>Admin</td>
+            <td>2025-01-01 10:30</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Depo Ekleme</td>
+            <td>Yeni Depo - İzmir</td>
+            <td>–</td>
+            <td>Admin</td>
+            <td>2025-01-01 09:15</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Stok Güncelleme</td>
+            <td>Spor Ayakkabı</td>
+            <td>+30</td>
+            <td>Admin</td>
+            <td>2025-01-01 08:45</td>
+          </tr>
+          <!-- Daha Fazla İşlem Satırı Ekleyebilirsiniz -->
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <!-- Scroll to Top Butonu -->
+  <button id="scrollToTopBtn" title="Üste Çık"><i class="fas fa-arrow-up"></i></button>
+
+ 
+</body>
+</html>

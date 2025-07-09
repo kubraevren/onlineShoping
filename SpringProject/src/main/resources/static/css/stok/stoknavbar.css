@@ -1,0 +1,122 @@
+/* Genel Ayarlar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+}
+
+/* Navbar */
+.navbar {
+  background-color: transparent;
+  color: #6a5acd;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Navbar'ı konumlandırmak için relative yapıyoruz */
+  z-index: 1; /* Navbar'ı alt kademeye alıyoruz */
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #4b3cb1;
+  color: white;
+  width: 200px;
+  height: 100vh; /* Sidebar'ın yüksekliğini tam ekran yapıyoruz */   
+  position: fixed;
+  left: 0;
+  top: 0; /* Sidebar'ın en üstten başlamasını sağlıyoruz */
+  transition: transform 0.3s ease-in-out;
+  z-index: 2; /* Sidebar'ı navbar'ın üstüne alıyoruz */
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+/* Navbar item'lerinin hover durumu */
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;  /* Sabit font boyutu */
+  padding: 8px 12px;
+  transition: all 0.3s ease; /* Yumuşak geçişler */
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+  background-color: #6a5acd;
+  padding: 8px 12px; /* padding değişmesin */
+  border-radius: 5px;
+  transform: none; /* Büyümeyi engelle */
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 200px;
+  padding: 20px;
+  flex: 1;
+}
+
+.product-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.product-form input, .product-form button {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.product-form button {
+  background-color: #4b3cb1;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.product-form button:hover {
+  background-color: #6a5acd;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4b3cb1;
+  color: white;
+}

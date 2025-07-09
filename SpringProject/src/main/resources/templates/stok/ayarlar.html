@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayarlar - Stok Takip Sistemi</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Genel CSS -->
+  <link rel="stylesheet" href="css/stok/styles.css">
+  
+  <!-- Ayarlar Özel CSS -->
+  <link rel="stylesheet" href="css/stok/ayarlar.css">
+  
+  <!-- JavaScript Dosyaları -->
+  <script src="js/scripts.js" defer></script>
+  <script src="js/stok/ayarlar.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Stok Takip Sistemi</h1>
+    <!-- Kullanıcı bilgileri, Profil resmi vb. -->
+    <div class="user-info">
+      <img src="images/logop.png" width="32px" height="32px" alt="Profil Resmi"/>
+      <span>Merhaba, Admin</span>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul>
+      <li><a href="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="urunEkle"><i class="fas fa-box-open"></i> Ürünler</a></li>
+      <li><a href="depoBilgileri"><i class="fas fa-warehouse"></i> Depo Bilgileri</a></li>
+      <li><a href="adminRaporlar"><i class="fas fa-chart-line"></i> Raporlar</a></li>
+      <li><a href="ayarlar" class="active"><i class="fas fa-cogs"></i> Ayarlar</a></li>
+      <li><a href="anasayfa"><i class="fas fa-sign-out-alt"></i> Çıkış</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Sayfa Başlığı -->
+    <div class="page-header">
+      <h2><i class="fas fa-cogs"></i> Ayarlar</h2>
+    </div>
+
+    <!-- Ayarlar Bölümleri -->
+    <section class="settings-section">
+      <!-- Genel Ayarlar -->
+      <div class="settings-box">
+        <h3><i class="fas fa-user-cog"></i> Genel Ayarlar</h3>
+        <form id="generalSettingsForm">
+          <label for="siteName">Site Adı:</label>
+          <input type="text" id="siteName" name="siteName" required>
+
+          <label for="siteLogo">Site Logosu:</label>
+          <input type="file" id="siteLogo" name="siteLogo" accept="image/*">
+
+          <label for="adminEmail">Admin E-posta:</label>
+          <input type="email" id="adminEmail" name="adminEmail" required>
+
+          <button type="submit" class="submit-btn"><i class="fas fa-save"></i> Kaydet</button>
+        </form>
+      </div>
+
+      <!-- Güvenlik Ayarları -->
+      <div class="settings-box">
+        <h3><i class="fas fa-shield-alt"></i> Güvenlik Ayarları</h3>
+        <form id="securitySettingsForm">
+          <label for="passwordPolicy">Parola Politikası:</label>
+          <select id="passwordPolicy" name="passwordPolicy" required>
+            <option value="">Seçiniz</option>
+            <option value="strong">Güçlü</option>
+            <option value="medium">Orta</option>
+            <option value="weak">Zayıf</option>
+          </select>
+
+          <label for="twoFactorAuth">İki Faktörlü Doğrulama:</label>
+          <select id="twoFactorAuth" name="twoFactorAuth" required>
+            <option value="">Seçiniz</option>
+            <option value="enabled">Etkin</option>
+            <option value="disabled">Devre Dışı</option>
+          </select>
+
+          <button type="submit" class="submit-btn"><i class="fas fa-save"></i> Kaydet</button>
+        </form>
+      </div>
+
+      <!-- Bildirim Ayarları -->
+      <div class="settings-box">
+        <h3><i class="fas fa-bell"></i> Bildirim Ayarları</h3>
+        <form id="notificationSettingsForm">
+          <label for="emailNotifications">E-posta Bildirimleri:</label>
+          <select id="emailNotifications" name="emailNotifications" required>
+            <option value="">Seçiniz</option>
+            <option value="enabled">Etkin</option>
+            <option value="disabled">Devre Dışı</option>
+          </select>
+
+          <label for="smsNotifications">SMS Bildirimleri:</label>
+          <select id="smsNotifications" name="smsNotifications" required>
+            <option value="">Seçiniz</option>
+            <option value="enabled">Etkin</option>
+            <option value="disabled">Devre Dışı</option>
+          </select>
+
+          <button type="submit" class="submit-btn"><i class="fas fa-save"></i> Kaydet</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Scroll to Top Butonu -->
+  <button id="scrollToTopBtn" title="Üste Çık"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>

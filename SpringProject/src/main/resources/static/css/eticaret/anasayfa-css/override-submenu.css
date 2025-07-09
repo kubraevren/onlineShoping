@@ -1,0 +1,137 @@
+/***********************************************************
+  override-submenu.css
+  Mega Menü İyileştirmeleri
+************************************************************/
+
+/***********************************************************
+  1) KATEGORİ KUTULARI (box-con1, box-con2 vs.)
+************************************************************/
+.nav-con3 .box-con1,
+.nav-con3 .box-con2,
+.nav-con3 .box-con3,
+.nav-con3 .box-con4,
+.nav-con3 .box-con6,
+.nav-con3 .box-con7,
+.nav-con3 .box-con8 {
+  width: auto !important;     /* İçeriğe göre genişleyecek */
+  min-width: 250px;           /* Aşırı dar olmasın */
+  max-width: 90vw;            /* Çok büyük ekranlarda taşmasın */
+  padding: 20px !important;   /* İç kenar boşluğunu artırdık */
+  border-radius: 6px;         /* Köşeleri hafif yuvarlak */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15) !important;
+  display: none !important;   /* Başlangıçta kapalı */
+  position: absolute !important;
+  top: 50px !important; 
+  left: 0 !important;
+  background-color: #fff !important;
+  z-index: 99 !important;
+}
+
+/***********************************************************
+  2) HOVER İLE GÖRÜNÜR HÂLE GETİRME
+************************************************************/
+.nav-con3 .box1:hover .box-con1,
+.nav-con3 .box2:hover .box-con2,
+.nav-con3 .box3:hover .box-con3,
+.nav-con3 .box4:hover .box-con4,
+.nav-con3 .box6:hover .box-con6,
+.nav-con3 .box7:hover .box-con7,
+.nav-con3 .box8:hover .box-con8 {
+  display: block !important;  /* Hover olunca görünür */
+}
+
+/***********************************************************
+  3) ANA İÇ BLOK (örn. .bx1, .bx2 ...), 
+     İÇİNDEKİ .list1, .list2, .list3 vb.'nin 
+     sütun düzeni alabilmesi için “flex” yapıyoruz.
+************************************************************/
+.nav-con3 .box-con1 .bx1,
+.nav-con3 .box-con2 .bx2,
+.nav-con3 .box-con3 .bx3,
+.nav-con3 .box-con4 .bx4,
+.nav-con3 .box-con6 .bx6,
+.nav-con3 .box-con7 .bx7,
+.nav-con3 .box-con8 .bx8 {
+  display: flex !important;   /* Yatayda sütunları yan yana dizer */
+  flex-wrap: wrap !important; /* Taşarsa alt satıra geçsin */
+  gap: 20px;                  /* Kolonlar arası boşluk */
+  align-items: flex-start;
+}
+
+/***********************************************************
+  4) .list1, .list2, .list3, .list4, .list5 vb.
+     Bu bloklar “sütun” gibi davranacak.
+     Mümkün olduğunca auto boyutlansın; 
+     Çok da uzamasın diye min ve max değerler ekliyoruz.
+************************************************************/
+.nav-con3 .box-con1 .bx1 .list1,
+.nav-con3 .box-con2 .bx2 .list2,
+.nav-con3 .box-con3 .bx3 .list1,
+.nav-con3 .box-con4 .bx4 .list2,
+.nav-con3 .box-con6 .bx6 .list1,
+.nav-con3 .box-con7 .bx7 .list2,
+.nav-con3 .box-con8 .bx8 .list1 {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;    /* Çok dar olmasın */
+  max-width: 200px;    /* Çok geniş olmasın */
+}
+
+/***********************************************************
+  5) Alt seviyedeki ul, li, a gibi elemanların temel görünümü 
+     (bazı HTML’de inline style var, onlara da !important gerekebilir).
+************************************************************/
+.nav-con3 .box-con1 .bx1 ul,
+.nav-con3 .box-con2 .bx2 ul,
+.nav-con3 .box-con3 .bx3 ul,
+.nav-con3 .box-con4 .bx4 ul,
+.nav-con3 .box-con6 .bx6 ul,
+.nav-con3 .box-con7 .bx7 ul,
+.nav-con3 .box-con8 .bx8 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-con3 .box-con1 .bx1 ul li,
+.nav-con3 .box-con2 .bx2 ul li,
+.nav-con3 .box-con3 .bx3 ul li,
+.nav-con3 .box-con4 .bx4 ul li,
+.nav-con3 .box-con6 .bx6 ul li,
+.nav-con3 .box-con7 .bx7 ul li,
+.nav-con3 .box-con8 .bx8 ul li {
+  margin-bottom: 5px;
+}
+
+/* Linkler (a) */
+.nav-con3 .box-con1 .bx1 ul li a,
+.nav-con3 .box-con2 .bx2 ul li a,
+.nav-con3 .box-con3 .bx3 ul li a,
+.nav-con3 .box-con4 .bx4 ul li a,
+.nav-con3 .box-con6 .bx6 ul li a,
+.nav-con3 .box-con7 .bx7 ul li a,
+.nav-con3 .box-con8 .bx8 ul li a {
+  text-decoration: none;
+  color: #555 !important;
+  font-size: 0.88rem;
+  transition: color 0.2s ease;
+}
+
+/* Hover’da rengi değişsin */
+.nav-con3 .box-con1 .bx1 ul li a:hover,
+.nav-con3 .box-con2 .bx2 ul li a:hover,
+.nav-con3 .box-con3 .bx3 ul li a:hover,
+.nav-con3 .box-con4 .bx4 ul li a:hover,
+.nav-con3 .box-con6 .bx6 ul li a:hover,
+.nav-con3 .box-con7 .bx7 ul li a:hover,
+.nav-con3 .box-con8 .bx8 ul li a:hover {
+  color: var(--accent-color) !important;
+}
+/* -----------------------------------------------------------
+   Kategori Menüsü Hover Efekti
+----------------------------------------------------------- */
+.nav-con3 a:hover {
+  color: var(--accent-color);
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}

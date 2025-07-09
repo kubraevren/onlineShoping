@@ -1,0 +1,387 @@
+/* -----------------------------------------------------------
+   CSS Değişkenleri
+----------------------------------------------------------- */
+:root {
+  --primary-color: #2d79f3;
+  --secondary-color: #1c5bb8;
+  --accent-color: #ff5200;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --light-text-color: #ccc;
+  --footer-background: #212529;
+  --footer-text-color: #ccc;
+  --badge-color: #fffb00;
+}
+
+
+/* styles.css */
+/***********************************************************
+  Genel Sıfırlama & Box-Sizing
+***********************************************************/
+* {
+  box-sizing: border-box;
+}
+
+/***********************************************************
+  CSS Değişkenleri
+***********************************************************/
+:root {
+  --primary-color: #2d79f3;
+  --secondary-color: #1c5bb8;
+  --accent-color: #ff5200;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --light-text-color: #ccc;
+  --footer-background: #212529;
+  --footer-text-color: #ccc;
+  --badge-color: #fffb00;
+}
+
+/***********************************************************
+  Genel Görünüm
+***********************************************************/
+body {
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/***********************************************************
+  Navigasyon - Üst Kısım
+***********************************************************/
+.nav-con {
+  width: 100%;
+  background: linear-gradient(to right, #f8f9fa, #ececec);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.nav-con2 .navbar {
+  padding: 10px 20px;
+}
+
+.navbar-brand img {
+  filter: brightness(1);
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+.search-box .form-control {
+  background-color: #e8e8e8; 
+  border: none;
+  border-radius: 25px;
+  padding-left: 15px;
+  outline: none;
+  color: #000; 
+  transition: background-color 0.2s;
+}
+
+.search-box .form-control::placeholder {
+  color: #444;
+  opacity: 0.8;
+}
+
+.nav-menu .nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  margin-right: 15px;
+  transition: color 0.2s ease;
+}
+
+.nav-menu .nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+.navbar-toggler {
+  border: 1px solid #999;
+}
+
+/***********************************************************
+  Kategori Menüsü (Mega Menü)
+***********************************************************/
+.nav-con3 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;           
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.nav-con3 > div {
+  position: relative;
+  padding: 15px 8px;
+}
+
+.nav-con3 a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.nav-con3 > div:hover > a {
+  color: var(--accent-color);
+}
+
+.yeni-badge {
+  background-color: var(--badge-color);
+  border-radius: 10px;
+  padding: 1px 4px;
+  margin-left: 3px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Responsive Mega Menü */
+@media (max-width: 992px) {
+  .nav-con3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/***********************************************************
+  ANA GÖRSELLER
+***********************************************************/
+.main-con4 .img-thumbnail,
+.main-con6 .img-thumbnail {
+  border: none;
+  border-radius: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 500px;
+}
+
+.main-con4 .img-thumbnail:hover,
+.main-con6 .img-thumbnail:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/***********************************************************
+  BUNLAR DA İLGİNİZİ ÇEKEBİLİR
+***********************************************************/
+.main-con10 {
+  margin: 30px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.con10hid1 h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.con10hid2 a {
+  text-decoration: none;
+  color: #555;
+  margin-right: 10px;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.con10hid2 a:hover {
+  color: var(--accent-color);
+}
+
+/***********************************************************
+  FOOTER
+***********************************************************/
+footer {
+  background: var(--footer-background);
+  color: var(--footer-text-color);
+  padding: 40px;
+  margin-top: 40px;
+}
+
+.foot-con {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.foot-box1 {
+  display: flex;
+  gap: 60px;
+  flex: 1;
+}
+
+.foot-box1 div h4 a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.foot-box1 div ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.foot-box1 div ul li {
+  margin-bottom: 6px;
+}
+
+.foot-box1 div ul li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.foot-box1 div ul li a:hover {
+  color: #fff;
+}
+
+.foot-box2 {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.foot-box2 .foot5 {
+  min-width: 120px;
+}
+
+.foot-box2 .foot5 h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.foot-box2 button {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.foot-box2 button:hover {
+  background-color: #e04700;
+}
+
+/***********************************************************
+  Responsive Footer
+***********************************************************/
+@media (max-width: 768px) {
+  .foot-con {
+    flex-direction: column;
+  }
+  .foot-box1, .foot-box2 {
+    flex: none;
+  }
+}
+/* -----------------------------------------------------------
+   Responsive Mega Menü
+----------------------------------------------------------- */
+@media (max-width: 992px) {
+  .nav-con3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-con3 .box-con1,
+  .nav-con3 .box-con2,
+  .nav-con3 .box-con3,
+  .nav-con3 .box-con4,
+  .nav-con3 .box-con6,
+  .nav-con3 .box-con7,
+  .nav-con3 .box-con8 {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+  }
+  .nav-con3 > div:hover > a {
+    color: var(--accent-color);
+  }
+}
+
+/* -----------------------------------------------------------
+   Responsive Footer
+----------------------------------------------------------- */
+@media (max-width: 768px) {
+  .foot-con {
+    flex-direction: column;
+  }
+  .foot-box1, .foot-box2 {
+    flex: none;
+  }
+}
+/* -----------------------------------------------------------
+   Genel Form Stilleri
+----------------------------------------------------------- */
+input[type="search"], input[type="text"], input[type="email"], input[type="password"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="search"]:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Buton Stilleri */
+button, .btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--secondary-color);
+}
+/* Scroll to Top Butonu */
+#scrollToTopBtn {
+  display: none; /* Başlangıçta gizli */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #e04700;
+  transform: scale(1.1);
+}
+/* Sticky Navbar */
+.nav-con {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}

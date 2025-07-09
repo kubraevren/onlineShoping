@@ -1,0 +1,46 @@
+/* Para miktarı altın rengiyle vurgulanması */
+@media (max-width: 992px) {
+  .nav-con3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-con3 .box-con1,
+  .nav-con3 .box-con2,
+  .nav-con3 .box-con3,
+  .nav-con3 .box-con4,
+  .nav-con3 .box-con6,
+  .nav-con3 .box-con7,
+  .nav-con3 .box-con8 {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+  }
+  .nav-con3 > div:hover > a {
+    color: var(--accent-color);
+  }
+}
+
+
+.gold-money {
+    color: goldenrod;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* Sepetim sayfası özel düzenlemeleri */
+  .mycart .user-balance {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-items .cart-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .remove-item {
+    margin-top: 10px;
+  }
+  

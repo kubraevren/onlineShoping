@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${urun.urunAdi} + ' - Ürün Detay'">Ürün Detay</title>
+  <link rel="stylesheet" th:href="@{/css/eticaret/urunDetay.css}" type="text/css">
+  <link rel="stylesheet" th:href="@{/css/eticaret/anasayfa-css/override-submenu.css}" type="text/css">
+  <link rel="stylesheet" th:href="@{/css/eticaret/anasayfa-css/styles.css}" type="text/css">
+
+  <!-- Diğer CSS bağlantıları -->
+</head>
+<body>
+  <div class="nav-con3">
+    <!-- Kadın Kategorisi -->
+    <div class="box1">
+      <a class="list_title1" href="#">Kadın</a>
+      <div class="box-con1">
+        <div class="bx1 p-2">
+          <div class="list1">
+            <ul>
+              <li><a href="#" class="category-title">Giyim</a></li>
+              <li><a href="#">Elbise</a></li>
+              <li><a href="#">Tişört</a></li>
+              <li><a href="#">Gömlek</a></li>
+              <li><a href="#">Kot Pantolon</a></li>
+            </ul>
+          </div>
+          <div class="list2">
+            <ul>
+              <li><a href="#" class="category-title">Ayakkabı</a></li>
+              <li><a href="#">Topuklu</a></li>
+              <li><a href="#">Sneaker</a></li>
+            </ul>
+            <ul>
+              <li><a href="#" class="category-title">Aksesuar & Çanta</a></li>
+              <li><a href="#">Çanta</a></li>
+              <li><a href="#">Saat</a></li>
+              <li><a href="#">Takı</a></li>
+              <li><a href="#">Cüzdan</a></li>
+            </ul>
+          </div>
+          <div class="list4">
+            <ul>
+              <li><a href="#" class="category-title">İç Giyim</a></li>
+              <li><a href="#">Pijama Takımı</a></li>
+              <li><a href="#">Çorap</a></li>
+              <li><a href="#">Korse</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Erkek Kategorisi -->
+    <div class="box2">
+      <a class="list_title2" href="#">Erkek</a>
+      <div class="box-con2">
+        <div class="bx2 p-2">
+          <div class="list1">
+            <ul>
+              <li><a href="#" class="category-title">Giyim</a></li>
+              <li><a href="#">Tişört</a></li>
+              <li><a href="#">Gömlek</a></li>
+              <li><a href="#">Eşofman</a></li>
+            </ul>
+          </div>
+          <div class="list2">
+            <ul>
+              <li><a href="#" class="category-title">Ayakkabı</a></li>
+              <li><a href="#">Spor Ayakkabı</a></li>
+              <li><a href="#">Kar Botu</a></li>
+              <li><a href="#">Deri Ayakkabı</a></li>
+            </ul>
+          </div>
+          <div class="list3">
+            <ul>
+              <li><a href="#" class="category-title">Çanta</a></li>
+              <li><a href="#">Sırt Çantası</a></li>
+              <li><a href="#">Spor Çanta</a></li>
+              <li><a href="#">Laptop Çantası</a></li>
+            </ul>
+          </div>
+          <div class="list4">
+            <ul>
+              <li><a href="#" class="category-title">Saat & Aksesuar</a></li>
+              <li><a href="#">Saat</a></li>
+              <li><a href="#">Güneş Gözlüğü</a></li>
+            </ul>
+            <ul>
+              <li><a href="#" class="category-title">İç Giyim</a></li>
+              <li><a href="#">Çorap</a></li>
+              <li><a href="#">Pijama</a></li>
+              <li><a href="#">Atlet</a></li>
+              <li><a href="#">İçlik</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Anne & Çocuk Kategorisi -->
+    <div class="box3">
+      <a class="list_title3" href="#">Anne & Çocuk</a>
+      <div class="box-con3">
+        <div class="bx3 p-2">
+          <div class="list1">
+            <ul>
+              <li><a href="#" class="category-title">Bebek</a></li>
+              <li><a href="#">Bebek Takımları</a></li>
+              <li><a href="#">Ayakkabı</a></li>
+              <li><a href="#">Hastane Çıkışı</a></li>
+            </ul>
+          </div>
+          <div class="list2">
+            <ul>
+              <li><a href="#" class="category-title">Kız Çocuk</a></li>
+              <li><a href="#">Elbise</a></li>
+              <li><a href="#">Sweatshirt</a></li>
+              <li><a href="#">Spor Ayakkabı</a></li>
+              <li><a href="#">Eşofman</a></li>
+            </ul>
+          </div>
+          <div class="list5">
+            <ul>
+              <li><a href="#" class="category-title">Beslenme & Emzirme</a></li>
+              <li><a href="#">Biberon & Emzik</a></li>
+              <li><a href="#">Göğüs Pompası</a></li>
+              <li><a href="#">Mama Sandalyesi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ev & Yaşam Kategorisi -->
+    <div class="box4">
+      <a class="list_title4" href="#">Ev & Yaşam</a>
+      <div class="box-con4">
+        <div class="bx4 p-2">
+          <div class="list2">
+            <ul>
+              <li><a href="#" class="category-title">Dekorasyon</a></li>
+              <li><a href="#">Ev Dekorasyonu</a></li>
+              <li><a href="#">Aydınlatma</a></li>
+            </ul>
+          </div>
+          <div class="list5">
+            <ul>
+              <li><a href="#" class="category-title">Mobilya</a></li>
+              <li><a href="#">Oturma Grupları</a></li>
+              <li><a href="#">Yatak Odası</a></li>
+              <li><a href="#">Yemek Odası</a></li>
+              <li><a href="#">Çalışma Odası</a></li>
+              <li><a href="#">Çocuk Odası</a></li>
+            </ul>
+          </div>
+          <div class="list6">
+            <ul>
+              <li><a href="#" class="category-title">Elektronik</a></li>
+              <li><a href="#">Bebek Elektroniği</a></li>
+              <li><a href="#">Ev Elektroniği</a></li>
+              <li><a href="#">Aksesuarlar</a></li>
+              <li><a href="#">Akıllı Ev</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kozmetik Kategorisi -->
+    <div class="box6">
+      <a class="list_title6" href="#">Kozmetik</a>
+      <div class="box-con6">
+        <div class="bx6 p-2">
+          <div class="list1">
+            <ul>
+              <li><a href="#" class="category-title">Cilt Bakımı</a></li>
+              <li><a href="#">Serum</a></li>
+              <li><a href="#">Yüz Kremi</a></li>
+              <li><a href="#">Maskeler</a></li>
+              <li><a href="#">Tonikler</a></li>
+            </ul>
+          </div>
+          <div class="list2">
+            <ul>
+              <li><a href="#" class="category-title">Makyaj</a></li>
+              <li><a href="#">Fondöten</a></li>
+              <li><a href="#">Maskara</a></li>
+              <li><a href="#">Eyeliner</a></li>
+            </ul>
+          </div>
+          <div class="list6">
+            <ul>
+              <li><a href="#" class="category-title">Saç Bakımı</a></li>
+              <li><a href="#">Şampuan</a></li>
+              <li><a href="#">Saç Kremi</a></li>
+              <li><a href="#">Saç Maskesi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ayakkabı Kategorisi -->
+    <div class="box7">
+      <a class="list_title7" href="#">Ayakkabı</a>
+      <div class="box-con7">
+        <div class="bx7 p-2">
+          <div class="list2">
+            <ul>
+              <li><a href="#" class="category-title">Bebek Ayakkabısı</a></li>
+              <li><a href="#">Spor Ayakkabı</a></li>
+              <li><a href="#">Deri Ayakkabı</a></li>
+              <li><a href="#">Topuklu Ayakkabı</a></li>
+            </ul>
+          </div>
+          <div class="list3">
+            <ul>
+              <li><a href="#" class="category-title">Erkek Ayakkabısı</a></li>
+              <li><a href="#">Spor Ayakkabı</a></li>
+              <li><a href="#">Deri Ayakkabı</a></li>
+              <li><a href="#">Günlük Ayakkabı</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Elektronik Kategorisi -->
+    <div class="box8">
+      <a class="list_title8" href="#">Elektronik</a>
+      <div class="box-con8">
+        <div class="bx8 p-2">
+          <div class="list1">
+            <ul>
+              <li><a href="#" class="category-title">Mobilya Elektroniği</a></li>
+              <li><a href="#">LED Aydınlatma</a></li>
+              <li><a href="#">Akıllı Saatler</a></li>
+            </ul>
+          </div>
+          <div class="list3">
+            <ul>
+              <li><a href="#" class="category-title">Ev Elektroniği</a></li>
+              <li><a href="#">TV & Ses Sistemleri</a></li>
+              <li><a href="#">Beyaz Eşyalar</a></li>
+              <li><a href="#">Küçük Ev Aletleri</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Çok Satanlar ve Flaş Ürünler -->
+    <div class="box10">
+      <a class="list_title10" href="#">
+        Çok Satanlar
+        <span class="yeni-badge">★Yeni</span>
+      </a>
+    </div>
+    <div class="box11">
+      <a class="list_title11" href="#">
+        Flaş Ürünler
+        <span class="yeni-badge">★Yeni</span>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Navigasyon ve diğer ortak bileşenler -->
+
+  <div class="product-detail-container">
+    <div class="product-image-gallery">
+      <div class="main-image">
+        <img th:src="@{${urun.imageUrl}}" th:alt="${urun.urunAdi}">
+      </div>
+      <!-- İsteğe bağlı: küçük resim galerisi -->
+    </div>
+    <div class="product-info">
+      <h1 th:text="${urun.urunAdi}">Ürün Adı</h1>
+      <div class="price" th:text="${urun.fiyat} + ' TL'">Fiyat</div>
+      <p class="product-description" th:text="${urun.aciklama}">Açıklama...</p>
+      <div class="purchase-section">
+        <button class="add-to-cart" th:attr="data-id=${urun.urunId}">Sepete Ekle</button>
+        <button class="buy-now" th:attr="data-id=${urun.urunId}">Şimdi Satın Al</button>
+        
+      </div>
+    </div>6
+  </div>
+
+  <script th:inline="javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        const kullaniciId = /*[[${user != null ? user.id : null}]]*/ null;
+        const buyNowBtn = document.querySelector('.buy-now');
+        if(buyNowBtn) {
+            buyNowBtn.addEventListener('click', () => {
+                const urunId = buyNowBtn.getAttribute('data-id');
+                if(!urunId) {
+                    alert("Ürün ID bulunamadı!");
+                    return;
+                }
+                // Kullanıcı oturum açmamışsa giriş sayfasına yönlendir
+                if(!kullaniciId) {
+                    window.location.href = '/girisYap';
+                    return;
+                }
+    
+                const orderData = {
+                    urunId: urunId,
+                    kullaniciId: kullaniciId,
+                    miktar: 1
+                };
+    
+                fetch('/siparis', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(orderData)
+                })
+                .then(response => {
+                    if(!response.ok) {
+                        throw new Error("Sunucu hatası: " + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert("Siparişiniz başarıyla oluşturuldu!");
+                })
+                .catch(error => {
+                    console.error('Hata:', error);
+                    alert("Sipariş oluşturulurken bir hata oluştu.");
+                });
+            });
+        }
+    });
+    </script>
+    
+    
+</body>
+</html>

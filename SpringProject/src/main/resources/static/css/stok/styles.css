@@ -1,0 +1,151 @@
+/* styles.css */
+
+/* GENEL AYARLAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    background: #f2f5f9; /* Arka plan rengi */
+    color: #333;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 0 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar h1 {
+    font-size: 1.4rem;
+    color: #4b3cb1;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .user-info img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  
+  /* SIDEBAR */
+  .sidebar {
+    background: linear-gradient(160deg, #4b3cb1, #6a5acd);
+    color: white;
+    width: 220px;
+    height: calc(100vh - 60px); /* Navbar yüksekliği çıkarıldı */
+    position: fixed;
+    top: 60px; /* Navbar yüksekliği */
+    left: 0;
+    padding-top: 20px;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  .sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar ul li a i {
+    margin-right: 10px;
+  }
+  
+  .sidebar ul li a:hover,
+  .sidebar ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* MAIN CONTENT */
+  .main-content {
+    margin-left: 220px; /* Sidebar genişliği kadar */
+    padding: 20px;
+    margin-top: 15px;   /* Navbar yüksekliği */
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* Scroll to Top Butonu */
+  #scrollToTopBtn {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #ff5200;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color: #e04700;
+    transform: scale(1.1);
+  }
+  
+  /* RESPONSIVE DOKUNUŞLAR */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      height: auto;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .sidebar {
+      top: 60px;
+      height: auto;
+      position: fixed;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      padding-top: 10px;
+    }
+    
+    .sidebar ul {
+      display: flex;
+      gap: 10px;
+      padding-left: 10px;
+    }
+    
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+    
+    .main-content {
+      margin-left: 0;
+      margin-top: 0;
+    }
+  }
+  

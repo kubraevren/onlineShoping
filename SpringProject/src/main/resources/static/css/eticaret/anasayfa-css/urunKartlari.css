@@ -1,0 +1,114 @@
+/* urunKartlari.css */
+/***********************************************************
+  Ürün Kartları Stilleri
+************************************************************/
+
+/* Kartların genel konteyneri */
+.product-container {
+  display: grid; /* Grid kullanarak yerleşimi düzenli hale getir */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px 15px; /* Satırlar arası boşluk ve sütunlar arası boşluk */
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Tekil kart yapısı */
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(243, 216, 209, 0.2);
+  text-align: center;
+  padding: 1rem;
+  transition: 0.3s ease-out;
+  overflow: hidden; /* Hover’da düğme dışarı taşmasın */
+}
+
+.card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  border-color: #e30db8bc;
+}
+
+/* Ürün resmi */
+.product-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+/* Ürün bilgileri */
+.product-info {
+  padding: 0.5rem 0;
+}
+
+/* Fiyat ve başlık */
+.product-info h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  min-height: 45px; /* Uzun yazılarda hizalama için */
+}
+
+.rating {
+  font-size: 0.85rem;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.stars {
+  color: #ffa500;
+  margin: 0 4px;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+/* Kart üzerinde hover ile çıkan buton */
+.card-button {
+  text-decoration: none;
+  background: rgba(227, 13, 184, 0.95);
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  border-radius: 1rem;
+  transform: translateX(-50%) translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  cursor: pointer;
+  border: none;
+}
+
+.card:hover .card-button {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+/* urunKartlari.css */
+
+/* Buton Animasyonu */
+.card-button {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.card:hover .card-button {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.product-list img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
