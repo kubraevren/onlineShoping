@@ -33,7 +33,7 @@ public class musteriController {
     @Autowired
     private stokKalemiRepository stokKalemiRepository;
 
-    // http://localhost:8080/eticaret/home
+    // http://localhost:8080/anasayfa
 
     /*
      * @GetMapping("/anasayfa")
@@ -70,13 +70,14 @@ public class musteriController {
     }
     // Uygun bir controller (örneğin, UrunController) içerisine ekleyin
 
-    @GetMapping("/urunDetay/{urunId}")
-    public String urunDetay(@PathVariable Long urunId, Model model, HttpSession session) {
-        urunBilgisi urun = urunService.findById(urunId);
+    @GetMapping("/urunDetay/{id}")//urunId idi
+    public String urunDetay(@PathVariable Long id, Model model, HttpSession session) {
+        urunBilgisi urun = urunService.findById(id);
+        model.addAttribute("urun", urun);
+
         if(urun == null) {
             return "404"; // Ürün bulunamadıysa uygun bir hata sayfası
         }
-        model.addAttribute("urun", urun);
 // Oturumdaki kullanıcıyı alıp model'e ekleyin
 musteri user = (musteri) session.getAttribute("loggedInUser");
 model.addAttribute("user", user);
